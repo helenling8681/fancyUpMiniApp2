@@ -1,0 +1,9 @@
+/* pages/rentalnew/rentalnew.wxss */
+.container {
+  margin-top: 60px;
+}
+
+form {
+  width: 60%;
+  margin: 0 auto;
+}

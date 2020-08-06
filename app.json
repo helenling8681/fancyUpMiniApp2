@@ -1,0 +1,63 @@
+{
+  "pages": [
+    "pages/landing/landing",
+    "pages/login/login",
+    "pages/index/index",
+    "pages/rentals/rentals",
+    "pages/rentalshow/rentalshow",
+    "pages/rentalslogin/rentalslogin",
+    "pages/orderslogin/orderslogin",
+    "pages/orders/orders",
+    "pages/userConsole/userConsole",
+    "pages/storageConsole/storageConsole",
+    "pages/databaseGuide/databaseGuide",
+    "pages/addFunction/addFunction",
+    "pages/deployFunctions/deployFunctions",
+    "pages/chooseLib/chooseLib",
+    "pages/openapi/openapi",
+    "pages/openapi/serverapi/serverapi",
+    "pages/openapi/callback/callback",
+    "pages/openapi/cloudid/cloudid",
+    "pages/im/im",
+    "pages/im/room/room",
+    "pages/rentalnew/rentalnew"
+  ],
+ 
+
+  "tabBar": {
+    "backgroundColor": "#f9f9f9",
+    "borderStyle": "white",
+    "selectedColor": "#00b38b",
+    "color": "#666666",
+    "list": [
+        {
+        "pagePath": "pages/landing/landing",
+        "iconPath": "/images/tabBar/rent.png",
+        "selectedIconPath": "images/tabBar/rent.png",
+        "text": "Rent an Outfit"
+        },
+        {
+        "pagePath": "pages/rentalslogin/rentalslogin",
+        "iconPath": "images/tabBar/home.png",
+        "selectedIconPath": "images/tabBar/home.png",
+        "text": "My Rentals"
+        },
+        {
+        "pagePath": "pages/orderslogin/orderslogin",
+        "iconPath": "images/tabBar/order.png",
+        "selectedIconPath": "images/tabBar/order.png",
+        "text": "My Orders"
+        }
+     ]
+  },
+    
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#F6F6F6",
+    "navigationBarTitleText": "FancyUp MiniApp",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json",
+  "style": "v2"
+}

@@ -1,0 +1,25 @@
+<!--pages/landing/landing.wxml-->
+<button class="black btn-transparent"  bindtap="goToLogin">Click to Log In</button>
+<!--pages/rentals/rentals.wxml-->
+  <view wx:key="index" wx:for="{{rentals}}" wx:for-item="rental">
+    <view data-id="{{rental.id}}" bindtap="goToShow" class="card-product b-grey-dark">
+    <view>
+    <image class="mr50" src="{{rental.image}}"/>
+    </view>
+      <view class="card-product-info">
+        <view class="h2 mt60">{{rental.name}}</view>
+        <view class="p">category: {{rental.category}}</view>
+        <view class="p">occasion: {{rental.occasion}}</view>
+        <view class="p">size: {{rental.size}}</view>   
+        <!-- <view class="p">available: {{rental.available}}</view>    -->
+        <view class="p"> rented: {{rental.rented}}</view>  
+        <view class="p">color: {{rental.color}}</view> 
+        <!-- <view class="p">user_id: {{rental.user_id}}</view>     -->
+      </view>
+    </view>
+    </view>
+  
+<!-- 
+<form bindsubmit="searchForm">
+<input name="query"> 
+</form> -->

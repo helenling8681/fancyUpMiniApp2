@@ -1,0 +1,26 @@
+<!--pages/rentals/rentals.wxml-->
+<view class="h2 bold message b-grey-dark row-center"> All My Rentals 😆</view> 
+  <view wx:key="index" wx:for="{{rentals}}" wx:for-item="rental">
+    <view data-id="{{rental.id}}" bindtap="goToShow" class="card-product b-grey-dark">
+    <view>
+    <image class="mr50" src="{{rental.image}}"/>
+    </view>
+      <view class="card-product-info">
+        <view class="h2 mt60">{{rental.name}}</view>
+        <view class="p">category: {{rental.category}}</view>
+        <view class="p">occasion: {{rental.occasion}}</view>
+        <view class="p">size: {{rental.size}}</view>   
+        <!-- <view class="p">available: {{rental.available}}</view>    -->
+        <view class="p"> rented: {{rental.rented}}</view>  
+        <view class="p">color: {{rental.color}}</view> 
+        <!-- <view class="p">user_id: {{rental.user_id}}</view>     -->
+        <view class="flex">
+          <button data-id="{{rental.id}}" class="btn-sm" bindtap="goToForm"><image style="width: 20px; height: 20px;" src="../../images/edit.png"></image></button>
+          <button data-id="{{rental.id}}" class="btn-sm" bindtap="deleteRental"><image style="width: 20px; height: 20px;" src="../../images/trash.png"></image></button>
+        </view>
+      </view>
+    </view>
+    </view>
+  <view class="btn-area">
+    <button class="black btn-transparent" bindtap="goToForm">Add a rental</button>
+  </view>

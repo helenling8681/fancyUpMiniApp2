@@ -1,0 +1,32 @@
+/* pages/rentalshow/rentalshow.wxss */
+.card-product {
+  overflow: hidden;
+  min-height: 120px;
+  background: white;
+  margin: 20rpx;
+  padding: 16px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.2);
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+.h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 8px;
+  color: black;
+}
+
+.p {
+  font-size: 12px;
+  margin: 4px;
+  color: black;
+}
+
+
+

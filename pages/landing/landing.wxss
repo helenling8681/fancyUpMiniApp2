@@ -1,0 +1,49 @@
+/* pages/landing/landing.wxss */
+.card-product {
+  overflow: hidden;
+  min-height: 120px;
+  background: white;
+  display: flex;
+  align-items: center;
+  margin: 20rpx;
+  padding: 8px 10px;
+  background: white;
+  box-shadow: 0 0 8px rgba(0,0,0,0.2);
+  border-radius: 4px;
+  margin: 8px;
+}
+
+.card-product .h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+  color: black;
+}
+
+.card-product .p {
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+  color: black;
+}
+
+image {
+  width: 300rpx;
+  height: 350rpx;
+  align-items: right;
+  object-fit: cover;
+}
+
+.message {
+    padding: 16px;
+    background: white;
+    box-shadow: 0 0 8px rgba(0,0,0,0.2);
+    border-radius: 4px;
+    margin: 8px;
+}
+.card-product-info {
+  display: flex;
+  flex-direction: column;
+}

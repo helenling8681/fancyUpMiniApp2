@@ -1,0 +1,16 @@
+<!--pages/rentalshow/rentalshow.wxml-->
+<view class="container b-grey-dark">
+  <!-- <view class="h2">{{name}}</view> -->
+  <!-- <view class="p">{{occasion}}</view> -->
+  <!-- <button bindtap="goToBook">Book</button> -->
+    <view class="card-product column-center justify-between">
+      <image class="justify-center" src="{{image}}"/>
+        <view class="h2">{{name}}</view>
+        <view class="p">category: {{category}}</view>
+        <view class="p">occasion: {{occasion}}</view>
+        <view class="p">size: {{size}}</view>      
+        <view class="p">rented: {{rented}}</view>  
+        <view class="p">color: {{color}}</view>   
+    <button class="black btn-transparent"  bindtap="goToLogin">Click to Order</button>
+  </view>
+</view>

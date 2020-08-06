@@ -1,0 +1,4 @@
+<!--pages/orderslogin/orderslogin.wxml-->
+<view class="h2 mt60">Welcome back to FancyUp!</view>
+<view> Please log in to view all your orders</view>
+<button class="black btn-transparent"  bindtap="goToLogin">Click to Log In</button>
