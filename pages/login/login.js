@@ -66,11 +66,14 @@ Page({
   },
   getUserInfo: function (e) {
     const page = this
-    console.log(e)
+    console.log(33,e)
     app.globalData.userInfo = e.detail.userInfo
+    console.log(88,app.globalData)
     this.setData({
       userInfo: e.detail.userInfo
     })
+    wx.setStorageSync('userInfo', e.detail.userInfo)
+    console.log(44,wx.getStorageSync('userInfo'))
 
     console.log(this.data)
     wx.request({
@@ -79,7 +82,7 @@ Page({
       data: {user: this.data.userInfo},
       success(res){
         console.log(res)
-        
+  
       }
 
     })
