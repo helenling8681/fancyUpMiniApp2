@@ -27,6 +27,17 @@ Page({
    * Lifecycle function--Called when page show
    */
   onShow: function () {
+    const page = this
+    // console.log(123, app.globalData)
+    const id = app.globalData.userId
+    // console.log(345, id)
+      wx.request({
+        url: app.globalData.url + `/users/${id}/orders`,
+        success: (res) => {
+          console.log(res)
+          page.setData(res.data)
+        },
+      })
 
   },
 
