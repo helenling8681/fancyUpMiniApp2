@@ -170,7 +170,6 @@ Page({
       size: size,
       image: url,
       user_id: app.globalData.userId
-      //necessary to have user_id
     }
     console.log(rental)
     const page = this
