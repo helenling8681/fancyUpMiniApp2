@@ -13,7 +13,7 @@ Page({
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
-    console.log(789,options)
+    // console.log(789,options)
   },
 
   /**
@@ -77,16 +77,16 @@ Page({
     const page = this
     console.log(33,e)
     app.globalData.userInfo = e.detail.userInfo
-    console.log(88,app.globalData)
+    // console.log(88,app.globalData)
     this.setData({
       userInfo: e.detail.userInfo
     })
     wx.setStorageSync('userInfo', e.detail.userInfo)
-    console.log(44,wx.getStorageSync('userInfo'))
+    console.log(44)
 
     console.log(this.data)
     wx.request({
-      url: app.globalData.url + `/users/${getApp().globalData.userId}`,
+      url: `${app.globalData.url}/users/${getApp().globalData.userId}`,
       method: "PUT",
       data: {user: this.data.userInfo},
       success(res){
@@ -104,7 +104,7 @@ Page({
   deleteRental: function(e) {
     let id = e.currentTarget.dataset.id
     wx.request({
-      url:`http://fancyup.herokuapp.com/api/v1/rentals/${id}`,
+      url:`${app.globalData.url}/rentals/${id}`,
       method: 'DELETE',
       success: (res) => {
         console.log(res),

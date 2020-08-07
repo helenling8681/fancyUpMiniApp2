@@ -74,6 +74,7 @@ Page({
    */
   onShareAppMessage: function () {
 
+
   },
   getUserInfo: function (e) {
     const page = this
