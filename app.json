@@ -8,6 +8,7 @@
     "pages/rentalslogin/rentalslogin",
     "pages/orderslogin/orderslogin",
     "pages/orders/orders",
+    "pages/new_order/new_order",
     "pages/rentalnew/rentalnew"
   ],
  
