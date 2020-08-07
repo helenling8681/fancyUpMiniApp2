@@ -25,7 +25,7 @@ App({
           },
           // insert next code here
           success: (res) => {
-            console.log(res)
+            console.log(222, res)
             this.globalData.userId = res.data.userId
 
             const id = res.data.userId
