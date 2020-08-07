@@ -72,8 +72,11 @@ picker {
   padding: 4px;
 }
 
-
-
-
+.image-area {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+}
 
 
