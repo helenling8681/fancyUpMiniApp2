@@ -17,7 +17,7 @@ Page({
   },
 
   /**
-   * Lifecycle function--Called when page is initially rendered
+   * Lifecycle functon--Called when page is initially rendered
    */
   onReady: function () {
 
