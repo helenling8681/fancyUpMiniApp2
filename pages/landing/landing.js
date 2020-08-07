@@ -35,7 +35,7 @@ Page({
     wx.request({
       url: 'http://localhost:3000/api/v1/rentals',
       success: (res) => {
-        // console.log(res)
+        console.log(res)
         page.setData(res.data)
       },
     })
