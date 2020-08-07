@@ -28,7 +28,7 @@ Page({
   onShow: function () {
       const page = this
       wx.request({
-        url: 'http://localhost:3000/api/v1/rentals',
+        url: app.globalData.url + '/rentals',
         success: (res) => {
           // console.log(res)
           page.setData(res.data)
@@ -50,7 +50,7 @@ Page({
   deleteRental: function(e) {
     let id = e.currentTarget.dataset.id
     wx.request({
-      url:`http://localhost:3000/api/v1/rentals/${id}`,
+      url: app.globalData.url+ `rentals/${id}`,
       method: 'DELETE',
       success: (res) => {
         console.log(res),

@@ -88,7 +88,7 @@ Page({
 
     console.log(this.data)
     wx.request({
-      url: `http://localhost:3000/api/v1/users/${getApp().globalData.userId}`,
+      url: app.globalData.url+ `/users/${getApp().globalData.userId}`,
       method: "PUT",
       data: {user: this.data.userInfo},
       success(res){

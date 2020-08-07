@@ -33,7 +33,7 @@ Page({
     this.setData({user: wx.getStorageSync('userInfo')})
     const page = this
     wx.request({
-      url: 'http://localhost:3000/api/v1/rentals',
+      url: app.globalData.url,
       success: (res) => {
         // console.log(res)
         page.setData(res.data)

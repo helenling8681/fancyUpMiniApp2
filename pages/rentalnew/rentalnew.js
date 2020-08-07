@@ -157,7 +157,7 @@ Page({
     if (page.data.id) {
       // update request... PUT request
       wx.request({
-        url: `http://localhost:3000/api/v1/rentals/${page.data.id}`,
+        url: app.globalData.url + `/rentals/${page.data.id}`,
         method: 'PUT',
         data: rental,
         success: (res) => {
@@ -168,7 +168,7 @@ Page({
       })
     } else {
       wx.request({
-        url: 'http://localhost:3000/api/v1/rentals',
+        url: app.globalData.url + '/rentals',
         method: 'POST',
         data: rental,
         success: (res) => {
@@ -193,7 +193,7 @@ Page({
     console.log(options)
     if (id) {
       wx.request({
-        url: `http://localhost:3000/api/v1/rentals/${id}`,
+        url: app.globalData.url + `/rentals/${id}`,
         success: (res) => {
           console.log(res)
           page.setData(res.data)

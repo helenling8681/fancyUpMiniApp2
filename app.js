@@ -37,7 +37,7 @@ App({
   },
   globalData: {
     hasUserInfo: true,
-    url: "http://localhost:3000/api/v1",
-    // url: "http://fancyup.herokuapp.com/api/v1"
+    // url: "http://localhost:3000/api/v1",
+    url: "http://fancyup.herokuapp.com/api/v1"
   }
 })
