@@ -1,6 +1,8 @@
 <!--pages/landing/landing.wxml-->
-<button class="black btn-transparent"  bindtap="goToLogin">Click to Log In</button>
+<!-- <button class="black btn-transparent"  bindtap="goToLogin">Click to Log In</button> -->
 <!--pages/rentals/rentals.wxml-->
+
+<view>Hello {{user.nickName}}</view>
   <view wx:key="index" wx:for="{{rentals}}" wx:for-item="rental">
     <view data-id="{{rental.id}}" bindtap="goToShow" class="card-product b-grey-dark">
     <view>
