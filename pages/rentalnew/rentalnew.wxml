@@ -1,15 +1,20 @@
 <!--pages/rentalnew/rentalnew.wxml-->
-<view class="container">
-  <form bindsubmit="formSubmit" bindreset="formReset">
+<view wx:if="{{id == undefined}}" class="h1">Add a new item</view>
+<view wx:else class="h1">Edit an item</view>
+<form bindsubmit="formSubmit" bindreset="formReset">
+  <view class="container">
     <view class="section">
       <view class="section__title">Name</view>
-      <input name ="name" placeholder="Enter a name for your rental" auto-focus/>
+      <input name ="name" placeholder="" value="{{name}}" auto-focus/>
     </view>
     <view class="section">
       <view class="section__title">Category</view>
       <picker bindchange="bindCategoryChange" value="{{categoryIndex}}" range="{{categories}}" name="category">
-        <view class="picker">
-          Currently selected: {{categories[categoryIndex]}}
+        <view class="picker" wx:if="{{id == undefined}}">
+          {{categories[categoryIndex]}}
+        </view>
+        <view class="picker" wx:else>
+          {{category}}
         </view>
       </picker>
     </view>
@@ -17,27 +22,27 @@
       <view class="section__title">Occasions</view>
       <picker bindchange="bindOccasionChange" value="{{occasionIndex}}" range="{{occasions}}" name="occasion">
         <view class="picker">
-          Currently selected: {{occasions[occasionIndex]}}
+          {{occasions[occasionIndex]}}
         </view>
       </picker>
     </view>
     <view class="section">
       <view class="section__title">Size</view>
-      <input name="size" placeholder="Enter a size"/>
+      <input name="size" placeholder="" value="{{size}}"/>
     </view>
     <view class="section">
       <view class="section__title">Color</view>
-      <input name="color" placeholder="Enter a color"/>
+      <input name="color" placeholder="" value="{{color}}"/>
     </view>
     <view class="section">
         <view class="section__title">Image url</view>
-        <input name="url" maxlength="300" placeholder="Enter a url"/>
+        <input name="url" maxlength="300" placeholder="" value="{{url}}"/>
     </view>
-    <view class="btn-area">
-      <button formType="submit">Submit</button>
-    </view>
-  </form>
-</view>
+  </view>
+  <view class="btn-area">
+    <button class="btn-blue" formType="submit">Submit</button>
+  </view>
+</form>
 <!-- <view class="btn-container">
   <button bindtap="chooseImageTap">Upload image</button>
 </view> -->

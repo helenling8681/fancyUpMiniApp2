@@ -50,7 +50,7 @@ Page({
   deleteRental: function(e) {
     let id = e.currentTarget.dataset.id
     wx.request({
-      url:`http://fancyup.herokuapp.com/api/v1/rentals/${id}`,
+      url:`http://localhost:3000/api/v1/rentals/${id}`,
       method: 'DELETE',
       success: (res) => {
         console.log(res),
@@ -88,9 +88,10 @@ Page({
   onShareAppMessage: function () {
 
   },
-  goToForm: function() {
+  goToForm: function(e) {
+    let id = e.currentTarget.dataset.id
     wx.navigateTo({
-      url: '/pages/rentalnew/rentalnew',
+      url: `/pages/rentalnew/rentalnew?id=${id}`,
     })
   },
 })
