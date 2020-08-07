@@ -1,6 +1,5 @@
 <!--pages/orderslogin/orderslogin.wxml-->
 <view class="h2 mt60">Welcome to FancyUp!</view>
-<button open-type="getUserInfo" bindgetuserinfo="getUserInfo">Login</button>
 <view class="h2 bold message b-grey-dark row-center"> All My Orders 😆</view> 
   <view wx:key="index" wx:for="{{orders}}" wx:for-item="order">
     <view data-id="{{rental.id}}" bindtap="goToShow" class="card-product b-grey-dark">
