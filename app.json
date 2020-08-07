@@ -8,8 +8,6 @@
     "pages/rentalslogin/rentalslogin",
     "pages/orderslogin/orderslogin",
     "pages/orders/orders",
-    "pages/im/im",
-    "pages/im/room/room",
     "pages/rentalnew/rentalnew"
   ],
  
