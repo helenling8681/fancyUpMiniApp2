@@ -1,4 +1,13 @@
-//app.js
+// app.js
+const AV = require('./utils/av-weapp-min.js')
+const config = require('./key')
+// Initialization of the app
+
+AV.init({
+  appId: config.appId,
+  appKey: config.appKey,
+  serverURLs: "https://pfxiud5s.lc-cn-n1-shared.com"
+});
 App({
   onLaunch: function () {
     const host = this.globalData.url

@@ -1,4 +1,6 @@
 // pages/rentalnew/rentalnew.js
+const app = getApp()
+const AV = require('../../utils/av-weapp-min.js');
 Page({
 
   /**
@@ -68,29 +70,46 @@ Page({
     // ],
     occasionIndex: 0,
   },
-  // chooseImageTap: function () {
-  //   var that = this;
-  //   wx.showActionSheet({
-  //     itemList: ['Choose image from album', 'Take a photo'],
-  //     itemColor: "#00000",
-  //     success: function (res) {
-  //       if (!res.cancel) {
-  //         if (res.tapIndex == 0) {
-  //           that.chooseWxImage('album')
-  //         } else if (res.tapIndex == 1) {
-  //           that.chooseWxImage('camera')
-  //         }
-  //       }
-  //     }
-  //   })
-  // }, 
-  // chooseWxImage: function (type) {
-  //   var that = this;
-  //   var imgsPaths = that.data.imgs;
-  //   wx.chooseImage({
-  //     sizeType: ['original', 'compressed'],
-  //     sourceType: [type],
-  //     success: function (res) {
+  chooseImageTap: function () {
+    var that = this;
+    wx.showActionSheet({
+      itemList: ['Choose image from album', 'Take a photo'],
+      itemColor: "#00000",
+      success: function (res) {
+        if (!res.cancel) {
+          if (res.tapIndex == 0) {
+            that.chooseWxImage('album')
+          } else if (res.tapIndex == 1) {
+            that.chooseWxImage('camera')
+          }
+        }
+      }
+    })
+  }, 
+  chooseWxImage: function (type) {
+    var that = this;
+    var imgsPaths = that.data.imgs;
+    wx.chooseImage({
+      sizeType: ['original', 'compressed'],
+      sourceType: [type],
+      success: function (res) {
+        let tempFilePath = res.tempFilePaths[0];
+        new AV.File('file-name', {
+          blob: {
+            uri: tempFilePath,
+          },
+        }).save().then(
+          file => that.setData({image: file.url()})
+        ).catch(console.error);
+      } 
+    });
+  },
+  previewMyImage: function(files) {
+    wx.previewImage({
+      current: '',  // number of index or file path
+      urls: files  // Array of temp files
+    })
+  },
   //       console.log(res.tempFilePaths[0]);
   //       that.upImgs(res.tempFilePaths[0], 0) //调用上传方法
   //     }
@@ -99,7 +118,7 @@ Page({
   // upImgs: function (imgurl, index) {
   //   var that = this;
   //   wx.uploadFile({
-  //     url: 'http://localhost:3000/api/v1/rentals',//
+  //     url: 'https://pfxiud5s.lc-cn-n1-shared.com',//
   //     filePath: imgurl,
   //     name: 'file',
   //     header: {
@@ -149,8 +168,8 @@ Page({
       size: size,
       color: color,
       size: size,
-      image: url
-      //necessary to have user_id
+      image: url,
+      user_id: app.globalData.userId
     }
     console.log(rental)
     const page = this

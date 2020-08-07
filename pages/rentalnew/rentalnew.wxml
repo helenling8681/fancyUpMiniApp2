@@ -10,11 +10,8 @@
     <view class="section">
       <view class="section__title">Category</view>
       <picker bindchange="bindCategoryChange" value="{{categoryIndex}}" range="{{categories}}" name="category">
-        <view class="picker" wx:if="{{id == undefined}}">
+        <view class="picker">
           {{categories[categoryIndex]}}
-        </view>
-        <view class="picker" wx:else>
-          {{category}}
         </view>
       </picker>
     </view>
@@ -36,7 +33,13 @@
     </view>
     <view class="section">
         <view class="section__title">Image url</view>
-        <input name="url" maxlength="300" placeholder="" value="{{url}}"/>
+        <input name="url" maxlength="300" placeholder="" value="{{image}}"/>
+    </view>
+    <view class="image-area">
+      <view class="btn-area-image">
+        <button class="btn-img" bindtap="chooseImageTap"><image style="width: 50px; height: 50px;" mode="aspectFill" src="../../images/Addimage.png"></image></button>
+      </view>
+      <image style="width: 90px; height: 90px;" mode="aspectFill" src="{{image}}"></image>
     </view>
   </view>
   <view class="btn-area">
