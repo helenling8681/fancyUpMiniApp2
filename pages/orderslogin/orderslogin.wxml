@@ -1,4 +1,8 @@
 <!--pages/orderslogin/orderslogin.wxml-->
+
+<view class="navbar row-end f30">Welcome to FancyUp! {{user.nickName}}   <image class="avatar-sm" src="{{user.avatarUrl}}"/></view>
+<button open-type="getUserInfo" bindgetuserinfo="getUserInfo">Login</button>
+
 <view class="h2 mt60">Welcome to FancyUp!</view>
 <view class="h2 bold message b-grey-dark row-center"> All My Orders 😆</view> 
   <view wx:key="index" wx:for="{{orders}}" wx:for-item="order">
@@ -14,14 +18,12 @@
         <view class="p">To: {{order.end_date}}</view> 
         <view class="p">status: {{order.status}}</view> 
         <view class="p">category: {{order.rental.category}}</view>
-        <view class="p">occasion: {{rorder.ental.occasion}}</view>
+        <view class="p">occasion: {{order.rental.occasion}}</view>
         <view class="p">size: {{order.rental.size}}</view>   
-        
         <!-- <view class="p">available: {{rental.available}}</view>    -->
         <view class="p"> rented: {{order.rental.rented}}</view>  
         <view class="p">color: {{order.rental.color}}</view> 
         <!-- <view class="p">user_id: {{rental.user_id}}</view>     -->
-        
       </view>
     </view>
     </view>

@@ -21,7 +21,7 @@ App({
 
             const id = res.data.userId
             wx.request({
-              url: `${this.globalData.url}//users/${id}`,
+              url: `${this.globalData.url}/users/${id}`,
               success: (res) => {
                 // console.log(res)
                 this.globalData.user = res.data
@@ -37,7 +37,7 @@ App({
   },
   globalData: {
     hasUserInfo: true,
-    url: "http://localhost:3000/api/v1",
-    // url: "http://fancyup.herokuapp.com/api/v1"
+    // url: "http://localhost:3000/api/v1",
+    url: "http://fancyup.herokuapp.com/api/v1"
   }
 })

@@ -74,5 +74,29 @@ Page({
    */
   onShareAppMessage: function () {
 
+
+  },
+  getUserInfo: function (e) {
+    const page = this
+    console.log(33,e)
+    app.globalData.userInfo = e.detail.userInfo
+    console.log(88,app.globalData)
+    this.setData({
+      userInfo: e.detail.userInfo
+    })
+    wx.setStorageSync('userInfo', e.detail.userInfo)
+    console.log(44,wx.getStorageSync('userInfo'))
+
+    console.log(this.data)
+    wx.request({
+      url: app.globalData.url+ `/users/${getApp().globalData.userId}`,
+      method: "PUT",
+      data: {user: this.data.userInfo},
+      success(res){
+        console.log(res)
+  
+      }
+
+    })
   }
 })

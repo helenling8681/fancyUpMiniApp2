@@ -4,13 +4,14 @@
   <!-- <view class="p">{{occasion}}</view> -->
   <!-- <button bindtap="goToBook">Book</button> -->
     <view class="card-product column-center justify-between">
-      <image class="justify-center" src="{{image}}"/>
-        <view class="h2">{{name}}</view>
+      <image class="" src="{{image}}"/>
+        <view class="h2 ma40">{{name}}</view>
         <view class="p">category: {{category}}</view>
         <view class="p">occasion: {{occasion}}</view>
         <view class="p">size: {{size}}</view>      
         <view class="p">rented: {{rented}}</view>  
         <view class="p">color: {{color}}</view>   
-    <button class="black btn-transparent" data-id="{{id}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo" bindtap="goToNewOrder">Click to Order</button>
+    <button class="btn-transparent bg-grey-light ma40" data-id="{{id}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo" bindtap="goToNewOrder">Click to Order</button>
+
   </view>
 </view>

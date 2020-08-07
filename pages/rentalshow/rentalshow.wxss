@@ -1,10 +1,9 @@
 /* pages/rentalshow/rentalshow.wxss */
 .card-product {
   overflow: hidden;
-  min-height: 120px;
+  height: 1200rpx;
   background: white;
   margin: 20rpx;
-  padding: 16px;
   box-shadow: 0 0 8px rgba(0,0,0,0.2);
   border-radius: 4px;
   display: flex;
@@ -18,13 +17,16 @@
 .h2 {
   font-size: 16px;
   font-weight: bold;
-  margin: 8px;
+  margin: 0;
   color: black;
 }
 
 .p {
   font-size: 12px;
-  margin: 4px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
   color: black;
 }
 
