@@ -8,64 +8,64 @@ Page({
     imgs: [],
     picPaths: [],
     categories: ['suit', 'pants', 'tie', 'shirt', 'coat', 'jacket', 'sweater', 'belt', 'shoes'],
-    categoriesArray: [
-      {
-        id: 0,
-        name: 'suit'
-      },
-      {
-        id: 1,
-        name: 'pants'
-      },
-      {
-        id: 2,
-        name: 'tie'
-      },
-      {
-        id: 3,
-        name: 'shirt'
-      },
-      {
-        id: 4,
-        name: 'coat'
-      },
-      {
-        id: 5,
-        name: 'jacket'
-      },
-      {
-        id: 6,
-        name: 'sweater'
-      },
-      {
-        id: 7,
-        name: 'belt'
-      },
-      {
-        id: 8,
-        name: 'shoes'
-      },
-    ],
+    // categoriesArray: [
+    //   {
+    //     id: 0,
+    //     name: 'suit'
+    //   },
+    //   {
+    //     id: 1,
+    //     name: 'pants'
+    //   },
+    //   {
+    //     id: 2,
+    //     name: 'tie'
+    //   },
+    //   {
+    //     id: 3,
+    //     name: 'shirt'
+    //   },
+    //   {
+    //     id: 4,
+    //     name: 'coat'
+    //   },
+    //   {
+    //     id: 5,
+    //     name: 'jacket'
+    //   },
+    //   {
+    //     id: 6,
+    //     name: 'sweater'
+    //   },
+    //   {
+    //     id: 7,
+    //     name: 'belt'
+    //   },
+    //   {
+    //     id: 8,
+    //     name: 'shoes'
+    //   },
+    // ],
     categoryIndex: 0,
     occasions: ['formal', 'cocktail', 'casual', 'black tie'],
-    occasionsArray: [
-      {
-        id: 0,
-        name: 'formal'
-      },
-      {
-        id: 1,
-        name: 'cocktail'
-      },
-      {
-        id: 2,
-        name: 'casual'
-      },
-      {
-        id: 3,
-        name: 'black tie'
-      },
-    ],
+    // occasionsArray: [
+    //   {
+    //     id: 0,
+    //     name: 'formal'
+    //   },
+    //   {
+    //     id: 1,
+    //     name: 'cocktail'
+    //   },
+    //   {
+    //     id: 2,
+    //     name: 'casual'
+    //   },
+    //   {
+    //     id: 3,
+    //     name: 'black tie'
+    //   },
+    // ],
     occasionIndex: 0,
   },
   // chooseImageTap: function () {
@@ -136,8 +136,10 @@ Page({
     let size = e.detail.value.size;
     let color = e.detail.value.color;
     let url = e.detail.value.url;
-    let category = this.data.categoriesArray[e.detail.value.category].name;
-    let occasion = this.data.occasionsArray[e.detail.value.occasion].name;
+    // let category = this.data.categoriesArray[e.detail.value.category].name;
+    let category = this.data.categories[e.detail.value.category]
+    // let occasion = this.data.occasionsArray[e.detail.value.occasion].name;
+    let occasion = this.data.occasions[e.detail.value.occasion]
     let id = this.data.id;
 
     const rental = {
@@ -155,7 +157,7 @@ Page({
     if (page.data.id) {
       // update request... PUT request
       wx.request({
-        url: `http://fancyup.herokuapp.com/api/v1/rentals/${page.data.id}`,
+        url: `http://localhost:3000/api/v1/rentals/${page.data.id}`,
         method: 'PUT',
         data: rental,
         success: (res) => {
@@ -166,7 +168,7 @@ Page({
       })
     } else {
       wx.request({
-        url: 'http://fancyup.herokuapp.com/api/v1/rentals',
+        url: 'http://localhost:3000/api/v1/rentals',
         method: 'POST',
         data: rental,
         success: (res) => {
@@ -188,12 +190,14 @@ Page({
   onLoad: function (options) {
     const page = this
     const id = options.id
-    console.log(page)
+    console.log(options)
     if (id) {
       wx.request({
-        url: `http://fancyup.herokuapp.com/api/v1/rentals/${id}`,
+        url: `http://localhost:3000/api/v1/rentals/${id}`,
         success: (res) => {
+          console.log(res)
           page.setData(res.data)
+          console.log(page)
         }
       })
     } 

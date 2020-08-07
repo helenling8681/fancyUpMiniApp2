@@ -1,9 +1,79 @@
 /* pages/rentalnew/rentalnew.wxss */
+Page {
+  margin-top: 20px;
+  background: linear-gradient(45deg, rgba(184, 158, 255, 0.17), rgba(162, 187, 255, 0.17));
+}
+.h1 {
+  font-size: 25px;
+  margin-bottom: 20px;
+  text-align: center;
+}
 .container {
-  margin-top: 60px;
+  border: 1px solid #242e49;
+  border-radius: 8px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.17);
+  display: flex;
+  width: 80%; 
+  margin: 20px auto;
+  justify-content: center;
+  align-items: flex-start;
+}
+.section {
+  margin-bottom: 10px;
+  justify-content: center;
+}
+.section:first-child {
+  margin-top: -20px;
+}
+.section:last-child {
+  margin-bottom: 20px;
+}
+.section__title .bold {
+  padding-bottom: 40rpx;
+}
+.section__title {
+  font-size: 18px;
+  padding-bottom: 2px;
+}
+.btn-area {
+  margin-top: 30px;
+  display: flex;
+}
+.btn-blue {
+  background: #8C70FF;
+  border: 1px solid rgba(0, 0, 0, 0.11);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.17);
+  border-radius: 8px;
+  flex-grow: 0.55;
+}
+form {
+  /* flex-grow: 0.8; */
+  margin-top: -18px;
+}
+input {
+  border: 1px solid rgba(0, 0, 0, 0.11);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.17);
+  border-radius: 8px;
+  height: 2.3rem;
+  width: 17rem;
+  box-sizing: border-box;
+  padding-left: 4px;
+}
+picker {
+  border: 1px solid rgba(0, 0, 0, 0.11);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.17);
+  border-radius: 8px;
+  height: 2.3rem;
+  display: flex;
+  align-items: center;
+  width: 17rem;
+}
+.picker {
+  padding: 4px;
 }
 
-form {
-  width: 60%;
-  margin: 0 auto;
-}
+
+
+
+
+
