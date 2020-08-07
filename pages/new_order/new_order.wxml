@@ -1,6 +1,5 @@
 <!--pages/new_order/new_order.wxml-->
-<text>pages/new_order/new_order.wxml</text>
-
+<view class="container b-grey-dark">
  <view class="card-product column-center justify-between">
       <image class="justify-center" src="{{rental.image}}"/>
         <view class="h2">{{rental.name}}</view>
@@ -10,29 +9,30 @@
         <view class="p">rented: {{rental.rented}}</view>  
         <view class="p">color: {{rental.color}}</view>   
   </view>
-<form bindsubmit="formSubmit" bindreset="formReset">
+<form class="card-product column-center justify-between" bindsubmit="formSubmit" bindreset="formReset">
   <view class="section">
-    <view class="section__title">Address:</view>
-    <input name="address" placeholder="please enter your address" />
+    <view class="p section__title">Address:</view>
+    <input class="p" name="address" placeholder="please enter your address" />
   </view>
   <view class="section section_gap">
     
   </view>
   <view class="section">
-  <view class="section__title">Order dates:</view>
+  <view class="p section__title">Order dates:</view>
   <picker name="startDate" mode="date" value="{{startDate}}" start="2020-08-02" end="2025-01-01" bindchange="bindStartDateChange">
-    <view class="picker">
+    <view class="p picker">
       From: {{startDate}}
     </view>
   </picker>
   <picker name="endDate" mode="date" value="{{endDate}}" start="2020-08-02" end="2025-01-01" bindchange="bindEndDateChange">
-    <view class="picker">
+    <view class="p picker">
       To: {{endDate}}
     </view>
   </picker>
 </view>
-  <view class="btn-area">
-    <button form-type="submit">Submit</button>
-    <button form-type="reset">Reset</button>
+  <view class="btn-area column-center">
+    <button class="btn-transparent bg-grey-light ma20" form-type="submit">Submit</button>
+    <button class="btn-transparent bg-grey-light ma10" form-type="reset">Reset</button>
   </view>
 </form>
+</view>

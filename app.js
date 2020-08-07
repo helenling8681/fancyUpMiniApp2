@@ -21,7 +21,7 @@ App({
 
             const id = res.data.userId
             wx.request({
-              url: `${this.globalData.url}//users/${id}`,
+              url: `${this.globalData.url}/users/${id}`,
               success: (res) => {
                 // console.log(res)
                 this.globalData.user = res.data

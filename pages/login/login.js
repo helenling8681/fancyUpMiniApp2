@@ -77,7 +77,7 @@ Page({
 
     console.log(this.data)
     wx.request({
-      url: app.globalData.url+/${getApp().globalData.userId}`,
+      url: app.globalData.url+`/${getApp().globalData.userId}`,
       method: "PUT",
       data: {user: this.data.userInfo},
       success(res){

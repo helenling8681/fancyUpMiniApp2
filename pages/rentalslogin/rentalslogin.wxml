@@ -1,7 +1,6 @@
 <!--pages/rentalslogin/rentalslogin.wxml-->
 
-<view class="h2 mt60">Welcome back to FancyUp!</view>
-<view> Please log in to view all your rentals</view>
+<view class="navbar row-end f30">Welcome to FancyUp! {{user.nickName}}   <image class="avatar-sm" src="{{user.avatarUrl}}"/></view>
 <button open-type="getUserInfo" bindgetuserinfo="getUserInfo">Login</button>
 <view class="h2 bold message b-grey-dark row-center"> All My Rentals 😆</view> 
   <view wx:key="index" wx:for="{{rentals}}" wx:for-item="rental">
