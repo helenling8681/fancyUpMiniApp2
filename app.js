@@ -18,6 +18,18 @@ App({
           success: (res) => {
             console.log(res)
             this.globalData.userId = res.data.userId
+
+            const id = res.data.userId
+            wx.request({
+              url: `${this.globalData.url}//users/${id}`,
+              success: (res) => {
+                // console.log(res)
+                this.globalData.user = res.data
+                console.log(this.globalData)
+                }
+  
+            })
+
           }
         })
       }

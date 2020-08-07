@@ -72,14 +72,11 @@ Page({
   onShareAppMessage: function () {
 
   },
-  goToLogin: function() {
-    if (app.globalData.hasUserInfo) {
-      wx.redirectTo({
-        url: '/pages/orders/orders',
-      })
-    } else {
-    wx.redirectTo({
-      url: '/pages/login/login',
-    })
-  }}
+  goToNewOrder: function(e) {
+    console.log(e)
+    const id = e.currentTarget.dataset.id
+   wx.redirectTo({
+     url: `/pages/new_order/new_order?id=${id}`,
+   })
+  }
 })

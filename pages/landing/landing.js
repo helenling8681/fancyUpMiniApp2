@@ -27,15 +27,15 @@ Page({
    * Lifecycle function--Called when page show
    */
   onShow: function () {
-    console.log(44,wx.getStorageSync('userInfo'))
+    // console.log(44,wx.getStorageSync('userInfo'))
 
-    console.log(33, app.globalData)
+    // console.log(33, app.globalData)
     this.setData({user: wx.getStorageSync('userInfo')})
     const page = this
     wx.request({
       url: 'http://localhost:3000/api/v1/rentals',
       success: (res) => {
-        console.log(res)
+        // console.log(res)
         page.setData(res.data)
       },
     })

@@ -9,6 +9,7 @@
     </view>
       <view class="card-product-info">
         <view class="h2 mt60">{{order.rental.name}}</view>
+        <view class="p">address: {{order.address}}</view> 
         <view class="p">status: {{order.status}}</view> 
         <view class="p">From: {{order.start_date}}</view> 
         <view class="p">To: {{order.end_date}}</view> 
